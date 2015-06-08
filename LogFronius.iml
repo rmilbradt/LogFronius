@@ -31,5 +31,7 @@
     <orderEntry type="library" name="Spring-4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Spring MVC-4.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 4.2.2-4.2.2" level="project" />
+    <orderEntry type="library" name="javax.json:javax.json-api:1.0" level="project" />
+    <orderEntry type="library" name="org.glassfish:javax.json:1.0.4" level="project" />
   </component>
 </module>
