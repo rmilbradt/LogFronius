@@ -20,6 +20,8 @@ public class NowSensorData {
             JsonObject value = (JsonObject) result.getValue();
 
             if(value.getJsonNumber("Value") != null){
+
+
                 JsonNumber valor = value.getJsonNumber("Value");
                 String unidade = value.getString("Unit");
                 System.out.println(result.getKey() + ": " + valor + " " + unidade);
