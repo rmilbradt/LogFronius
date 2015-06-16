@@ -31,11 +31,17 @@ public class LeituraUrls {
             JsonObject value = (JsonObject) result.getValue();
 
             if (result.getKey().equals("0")) {
-                leitura.setTemperatura1(value.getJsonNumber("Value").doubleValue());
-                System.out.println("Temperatura 1: " + leitura.getTemperatura1() + " " + value.getString("Unit"));
+                leitura.setTempModulos(value.getJsonNumber("Value").intValue());
+                System.out.println("Temperatura Modulos: " + leitura.getTempModulos() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("1")) {
-                leitura.setTemperatura2(value.getJsonNumber("Value").doubleValue());
-                System.out.println("Temperatura 2: " + leitura.getTemperatura2() + " " + value.getString("Unit"));
+                leitura.setTemAmbiente(value.getJsonNumber("Value").intValue());
+                System.out.println("Temperatura Ambiente: " + leitura.getTemAmbiente() + " " + value.getString("Unit"));
+            } else if (result.getKey().equals("2")) {
+                leitura.setIrradiancia(value.getJsonNumber("Value").doubleValue());
+                System.out.println("Irradiancia: " + leitura.getIrradiancia() + " " + value.getString("Unit"));
+            } else if (result.getKey().equals("4")) {
+                leitura.setVento(value.getJsonNumber("Value").intValue());
+                System.out.println("Vento: " + leitura.getVento() + " " + value.getString("Unit"));
             }
         }
 
@@ -64,11 +70,14 @@ public class LeituraUrls {
                 leitura.setDcCurrent(value.getJsonNumber("Value").doubleValue());
                 System.out.println("DC Current: " + leitura.getDcCurrent() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("PAC")) {
-                leitura.setEnergiaAtual(value.getJsonNumber("Value").doubleValue());
-                System.out.println("Energia Atual: " + leitura.getEnergiaAtual() + " " + value.getString("Unit"));
+                leitura.setPotencia(value.getJsonNumber("Value").doubleValue());
+                System.out.println("Potência: " + leitura.getPotencia() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("TOTAL_ENERGY")) {
                 leitura.setEnergiaTotal(value.getJsonNumber("Value").doubleValue());
                 System.out.println("Energia Total: " + leitura.getEnergiaTotal() + " " + value.getString("Unit"));
+            } else if (result.getKey().equals("UAC")) {
+                leitura.setAcVoltage(value.getJsonNumber("Value").doubleValue());
+                System.out.println("AC Voltage: " + leitura.getAcVoltage() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("UDC")) {
                 leitura.setDcVoltage(value.getJsonNumber("Value").doubleValue());
                 System.out.println("DC Voltage: " + leitura.getDcVoltage() + " " + value.getString("Unit"));

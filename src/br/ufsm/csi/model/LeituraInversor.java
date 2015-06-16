@@ -6,49 +6,43 @@ import javax.json.JsonNumber;
  * Created by politecnico on 08/06/2015.
  */
 public class LeituraInversor {
-    private double temperatura1;
-    private double temperatura2;
+    private int tempModulos;
+    private int temAmbiente;
+    private double irradiancia;
+    private int vento;
     private double energiaDia;
     private double acFrequency;
     private double acCurrent;
     private double dcCurrent;
-    private double energiaAtual;
+    private double potencia;
     private double energiaTotal;
     private double acVoltage;
     private double dcVoltage;
     private double energiaAnual;
 
-    public double getTemperatura1() {
-        return temperatura1;
-    }
+    public int getTempModulos() { return tempModulos; }
 
-    public void setTemperatura1(double temperatura1) {
-        this.temperatura1 = temperatura1;
-    }
+    public void setTempModulos(int tempModulos) { this.tempModulos = tempModulos; }
 
-    public double getTemperatura2() {
-        return temperatura2;
-    }
+    public int getTemAmbiente() { return temAmbiente; }
 
-    public void setTemperatura2(double temperatura2) {
-        this.temperatura2 = temperatura2;
-    }
+    public void setTemAmbiente(int temAmbiente) { this.temAmbiente = temAmbiente; }
 
-    public double getEnergiaDia() {
-        return energiaDia;
-    }
+    public double getIrradiancia() { return irradiancia; }
 
-    public void setEnergiaDia(double energiaDia) {
-        this.energiaDia = energiaDia;
-    }
+    public void setIrradiancia(double irradiancia) { this.irradiancia = irradiancia; }
 
-    public double getAcFrequency() {
-        return acFrequency;
-    }
+    public int getVento() { return vento; }
 
-    public void setAcFrequency(double acFrequency) {
-        this.acFrequency = acFrequency;
-    }
+    public void setVento(int vento) { this.vento = vento; }
+
+    public double getEnergiaDia() { return energiaDia; }
+
+    public void setEnergiaDia(double energiaDia) { this.energiaDia = energiaDia; }
+
+    public double getAcFrequency() { return acFrequency; }
+
+    public void setAcFrequency(double acFrequency) { this.acFrequency = acFrequency; }
 
     public double getAcCurrent() {
         return acCurrent;
@@ -66,21 +60,13 @@ public class LeituraInversor {
         this.dcCurrent = dcCurrent;
     }
 
-    public double getEnergiaAtual() {
-        return energiaAtual;
-    }
+    public double getPotencia() { return potencia; }
 
-    public void setEnergiaAtual(double energiaAtual) {
-        this.energiaAtual = energiaAtual;
-    }
+    public void setPotencia(double potencia) { this.potencia = potencia; }
 
-    public double getEnergiaTotal() {
-        return energiaTotal;
-    }
+    public double getEnergiaTotal() { return energiaTotal; }
 
-    public void setEnergiaTotal(double energiaTotal) {
-        this.energiaTotal = energiaTotal;
-    }
+    public void setEnergiaTotal(double energiaTotal) { this.energiaTotal = energiaTotal / 100; }
 
     public double getAcVoltage() {
         return acVoltage;
@@ -103,6 +89,6 @@ public class LeituraInversor {
     }
 
     public void setEnergiaAnual(double energiaAnual) {
-        this.energiaAnual = energiaAnual;
+        this.energiaAnual = energiaAnual / 100;
     }
 }
