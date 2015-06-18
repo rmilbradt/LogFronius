@@ -14,7 +14,7 @@
 
        <context:component-scan base-package="br.ufsm.csi" />
 
-       <!--<tx:annotation-driven transaction-manager="transactionManager"/>
+       <tx:annotation-driven transaction-manager="transactionManager"/>
 
        <bean id="transactionManager"
              class="org.springframework.orm.hibernate4.HibernateTransactionManager">
@@ -35,7 +35,7 @@
                             <prop key="hibernate.hbm2ddl.auto">update</prop>
                      </props>
               </property>
-       </bean>-->
+       </bean>
 
        <bean id="viewResolver"
              class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -45,13 +45,13 @@
               <property name="suffix" value=".jsp" />
        </bean>
 
-       <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
-              <property name="url" value="jdbc:hsqldb:hsql://localhost/" />
+       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+              <property name="url" value="jdbc:hsqldb:file:C:\Projetos\LogFronius\db" />
               <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
               <property name="username" value="SA" />
               <property name="password" value="" />
               <property name="removeAbandoned" value="true"/>
               <property name="maxIdle" value="1" />
               <property name="maxActive" value="5" />
-       </bean>-->
+       </bean>
 </beans>

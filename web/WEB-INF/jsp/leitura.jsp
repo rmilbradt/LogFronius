@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,7 +37,7 @@
         <div class="row">
           <div class="col-lg-3 column">
             <h2 style="text-decoration: underline; font-weight: bold;">Visão Geral do Sistema</h2>
-              <h3><b>Potência:</b> ${leitura.potencia} W</h3>
+              <h3><b>Potência:</b> <fmt:formatNumber value="${leitura.potencia}" pattern="#,###0.00"/>W</h3>
               <h3><b>Dia:</b> ${leitura.energiaDia} Wh</h3>
               <h3><b>Ano:</b> ${leitura.energiaAnual} KWh</h3>
               <h3><b>Total:</b> ${leitura.energiaTotal} KWh</h3>
@@ -51,10 +52,11 @@
           <div class="col-lg-5 column" style="border-left: 1px solid slategray">
             <h2  style="text-decoration: underline; font-weight: bold;">Outros</h2>
               <h3><b>Frequência corrente alternada:</b> ${leitura.acFrequency} Hz</h3>
-              <h3><b>Corrente alternada:</b> ${leitura.acCurrent} A</h3>
-              <h3><b>Corrente contínua:</b> ${leitura.dcCurrent} A</h3>
-              <h3><b>Voltagem corrente alternada:</b> ${leitura.acVoltage} V</h3>
-              <h3><b>Voltagem corrente contínua:</b> ${leitura.dcVoltage} V</h3>
+              <h3><b>Corrente CA:</b> ${leitura.acCurrent} A</h3>
+              <h3><b>Corrente CC:</b> ${leitura.dcCurrent} A</h3>
+              <h3><b>Tensão CA:</b> ${leitura.acVoltage} V</h3>
+              <h3><b>Tensão CC:</b> ${leitura.dcVoltage} V</h3>
+              <h3><b><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></b></h3>
           </div>
         </div>
       </div>

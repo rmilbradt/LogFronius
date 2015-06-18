@@ -3,10 +3,14 @@ package br.ufsm.csi.beans;
 import br.ufsm.csi.model.LeituraInversor;
 import org.springframework.stereotype.Repository;
 
-import javax.json.*;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonValue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -86,6 +90,7 @@ public class LeituraUrls {
                 System.out.println("Energia Anual: " + leitura.getEnergiaAnual() + " " + value.getString("Unit"));
             }
         }
+        leitura.setDataHoraLeitura(new Date());
         return leitura;
     }
 }

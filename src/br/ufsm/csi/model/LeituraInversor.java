@@ -1,14 +1,24 @@
 package br.ufsm.csi.model;
 
-import javax.json.JsonNumber;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * Created by politecnico on 08/06/2015.
  */
+@Entity
+@Table(name = "LEITURAS")
 public class LeituraInversor {
-    private int tempModulos;
-    private int temAmbiente;
-    private double irradiancia;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private Integer tempModulos;
+    private Integer temAmbiente;
+    private Double irradiancia;
     private int vento;
     private double energiaDia;
     private double acFrequency;
@@ -19,6 +29,23 @@ public class LeituraInversor {
     private double acVoltage;
     private double dcVoltage;
     private double energiaAnual;
+    private Date dataHoraLeitura;
+
+    public Date getDataHoraLeitura() {
+        return dataHoraLeitura;
+    }
+
+    public void setDataHoraLeitura(Date dataHoraLeitura) {
+        this.dataHoraLeitura = dataHoraLeitura;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getTempModulos() { return tempModulos; }
 
