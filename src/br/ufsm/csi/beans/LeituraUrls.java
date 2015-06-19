@@ -41,7 +41,7 @@ public class LeituraUrls {
                 leitura.setTemAmbiente(value.getJsonNumber("Value").intValue());
                 System.out.println("Temperatura Ambiente: " + leitura.getTemAmbiente() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("2")) {
-                leitura.setIrradiancia(value.getJsonNumber("Value").doubleValue());
+                leitura.setIrradiancia(value.getJsonNumber("Value").intValue());
                 System.out.println("Irradiancia: " + leitura.getIrradiancia() + " " + value.getString("Unit"));
             } else if (result.getKey().equals("4")) {
                 leitura.setVento(value.getJsonNumber("Value").intValue());

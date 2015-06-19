@@ -18,8 +18,8 @@ public class LeituraInversor {
     private Long id;
     private Integer tempModulos;
     private Integer temAmbiente;
-    private Double irradiancia;
-    private int vento;
+    private Integer irradiancia;
+    private Integer vento;
     private double energiaDia;
     private double acFrequency;
     private double acCurrent;
@@ -31,14 +31,6 @@ public class LeituraInversor {
     private double energiaAnual;
     private Date dataHoraLeitura;
 
-    public Date getDataHoraLeitura() {
-        return dataHoraLeitura;
-    }
-
-    public void setDataHoraLeitura(Date dataHoraLeitura) {
-        this.dataHoraLeitura = dataHoraLeitura;
-    }
-
     public Long getId() {
         return id;
     }
@@ -47,21 +39,25 @@ public class LeituraInversor {
         this.id = id;
     }
 
-    public int getTempModulos() { return tempModulos; }
+    public void setTempModulos(Integer tempModulos) { this.tempModulos = tempModulos; }
 
-    public void setTempModulos(int tempModulos) { this.tempModulos = tempModulos; }
+    public Date getDataHoraLeitura() { return dataHoraLeitura; }
 
-    public int getTemAmbiente() { return temAmbiente; }
+    public void setDataHoraLeitura(Date dataHoraLeitura) { this.dataHoraLeitura = dataHoraLeitura; }
 
-    public void setTemAmbiente(int temAmbiente) { this.temAmbiente = temAmbiente; }
+    public Integer getTempModulos() { return tempModulos; }
 
-    public double getIrradiancia() { return irradiancia; }
+    public Integer getTemAmbiente() { return temAmbiente; }
 
-    public void setIrradiancia(double irradiancia) { this.irradiancia = irradiancia; }
+    public void setTemAmbiente(Integer temAmbiente) { this.temAmbiente = temAmbiente; }
 
-    public int getVento() { return vento; }
+    public Integer getIrradiancia() { return irradiancia; }
 
-    public void setVento(int vento) { this.vento = vento; }
+    public void setIrradiancia(Integer irradiancia) { this.irradiancia = irradiancia; }
+
+    public Integer getVento() { return vento; }
+
+    public void setVento(Integer vento) { this.vento = vento; }
 
     public double getEnergiaDia() { return energiaDia; }
 
