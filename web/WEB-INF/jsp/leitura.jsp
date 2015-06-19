@@ -37,10 +37,10 @@
         <div class="row">
           <div class="col-lg-4 column">
             <h2 style="text-decoration: underline; font-weight: bold;">Visão Geral do Sistema</h2>
-              <h3><b>Potência:</b> <fmt:formatNumber value="${leitura.potencia}" pattern="#,###0.00"/> W</h3>
-              <h3><b>Dia:</b> <fmt:formatNumber value="${leitura.energiaDia}" pattern="#,###0.00"/> Wh</h3>
-              <h3><b>Ano:</b> <fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,###0.00"/> KWh</h3>
-              <h3><b>Total:</b> <fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,###0.00"/> KWh</h3>
+              <h3><b>Potência:</b> <fmt:formatNumber value="${leitura.potencia}" pattern="#,##0.00"/> W</h3>
+              <h3><b>Dia:</b> <fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh</h3>
+              <h3><b>Ano:</b> <fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,##0.00"/> KWh</h3>
+              <h3><b>Total:</b> <fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,##0.00"/> KWh</h3>
           </div>
           <div class="col-lg-4 column" style="border-left: 1px solid slategray;">
               <h2  style="text-decoration: underline; font-weight: bold;">Sensores</h2>
@@ -52,10 +52,10 @@
           <div class="col-lg-4 column" style="border-left: 1px solid slategray">
             <h2  style="text-decoration: underline; font-weight: bold;">Outros</h2>
               <h3><b>Frequência CA:</b> <fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</h3>
-              <h3><b>Corrente CA:</b> <fmt:formatNumber value="${leitura.acCurrent}" pattern="#,###0.00"/> A</h3>
-              <h3><b>Corrente CC:</b> <fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,###0.00"/> A</h3>
-              <h3><b>Tensão CA:</b> <fmt:formatNumber value="${leitura.acVoltage}" pattern="#,###0.00"/> V</h3>
-              <h3><b>Tensão CC:</b> <fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,###0.00"/> V</h3>
+              <h3><b>Corrente CA:</b> <fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</h3>
+              <h3><b>Corrente CC:</b> <fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</h3>
+              <h3><b>Tensão CA:</b> <fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</h3>
+              <h3><b>Tensão CC:</b> <fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/> V</h3>
           </div>
 
         </div>

@@ -46,7 +46,8 @@
        </bean>
 
        <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
-              <property name="url" value="jdbc:hsqldb:file:C:\Users\201420240\IdeaProjects\LogFronius\db" />
+              <!--<property name="url" value="jdbc:hsqldb:file:C:\Users\201420240\IdeaProjects\LogFronius\db" />-->
+              <property name="url" value="jdbc:hsqldb:file:C:\Projetos\LogFronius\db" />
               <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
               <property name="username" value="SA" />
               <property name="password" value="" />

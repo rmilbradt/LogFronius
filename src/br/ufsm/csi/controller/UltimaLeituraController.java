@@ -1,6 +1,6 @@
 package br.ufsm.csi.controller;
 
-import br.ufsm.csi.beans.LeiruaInversorDAO;
+import br.ufsm.csi.beans.LeituraInversorDAO;
 import br.ufsm.csi.beans.LeituraUrls;
 import br.ufsm.csi.model.LeituraInversor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,16 @@ public class UltimaLeituraController {
     private LeituraUrls leituraUrls;
 
     @Autowired
-    private LeiruaInversorDAO dao;
+    private LeituraInversorDAO dao;
 
     @RequestMapping(value = "leitura.html")
     public String leitura(Model model) throws IOException {
-        LeituraInversor l = leituraUrls.executaLeitura();
+        LeituraInversor l = leituraUrls.getUltimaLeitura();
         model.addAttribute("leitura", l);
-        dao.gravaLeitura(l);
         return "leitura";
     }
+
+
+
 
 }
