@@ -1,11 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
-  User: politecnico
-  Date: 19/06/2015
-  Time: 10:18
+  User: 201420240
+  Date: 23/06/2015
+  Time: 12:06
   To change this template use File | Settings | File Templates.
 --%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -56,43 +55,23 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <h2 style="margin: 60px; text-align: center">Relatório</h2>
+  <h2 style="margin: 60px; text-align: center">Relatório - Sensores</h2>
 
   <div class="row">
     <table class="table table-bordered table-striped">
       <tr>
         <th>Data</th>
-        <th>Potência (W)</th>
-        <th>Dia (Wh)</th>
-        <th>Ano (KWh)</th>
-        <th>Total (KWh)</th>
         <th>Temp. Módulos (ºC)</th>
         <th>Temp. Ambiente(ºC)</th>
         <th>Irradiância (W/m²)</th>
         <th>Vento (m/s)</th>
-        <th>Frequência CA (Hz)</th>
-        <th>Corrente CA (A)</th>
-        <th>Corrente CC (A)</th>
-        <th>Tensão CA (A)</th>
-        <th>Tensão CC (A)</th>
       </tr>
       <c:forEach items="${leituras}" var="leitura">
         <tr>
-          <td><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
-          <td><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,##0.00"/></td>
           <td>${leitura.tempModulos}</td>
           <td>${leitura.temAmbiente}</td>
           <td>${leitura.irradiancia}</td>
           <td>${leitura.vento}</td>
-          <td><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/></td>
-          <td><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/></td>
-
         </tr>
       </c:forEach>
     </table>

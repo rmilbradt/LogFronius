@@ -16,41 +16,68 @@
       <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
       <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
 
-
+      <style type="text/css">
+        body {color: #777;}
+        h2 {font-size: 28px; font-weight: bold}
+        h3 {font-size: 20px;}
+      </style>
   </head>
   <body>
 
   <div class="container">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header" style="padding: 3px;">
-          <a class="navbar-brand" href="#" style="font-size: 22px; color: white;"><b>Inversor Fronius Politécnico</b></a>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="leitura.html" style="font-size: 27px;"><b>Inversor Fronius Politécnico</b></a>
         </div>
-      </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 16px;">Relatórios<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="relatorio.html">Relatório</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioVisaoGeral.html">Visão Geral do Sistema</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioSensores.html">Sensores</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioOutros.html">Outros</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
     </nav>
 
-
     <div class="row">
-      <div class="col-md-12 column" style="margin-top: 120px;">
+      <div class="col-md-12 column" style="margin-top: 50px;">
 
         <div class="row">
           <div class="col-lg-4 column">
-            <h2 style="text-decoration: underline; font-weight: bold;">Visão Geral do Sistema</h2>
+            <h2>Visão Geral do Sistema</h2>
               <h3><b>Potência:</b> <fmt:formatNumber value="${leitura.potencia}" pattern="#,##0.00"/> W</h3>
               <h3><b>Dia:</b> <fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh</h3>
               <h3><b>Ano:</b> <fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,##0.00"/> KWh</h3>
               <h3><b>Total:</b> <fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,##0.00"/> KWh</h3>
           </div>
-          <div class="col-lg-4 column" style="border-left: 1px solid slategray;">
-              <h2  style="text-decoration: underline; font-weight: bold;">Sensores</h2>
+          <div class="col-lg-4 column" style="border-left: 1px solid #777;">
+              <h2>Sensores</h2>
               <h3><b>Temperatura módulos:</b> ${leitura.tempModulos} ºC</h3>
               <h3><b>Temperatura ambiente:</b> ${leitura.temAmbiente} ºC</h3>
               <h3><b>Irradiância:</b> ${leitura.irradiancia} W/m²</h3>
               <h3><b>Vento:</b> ${leitura.vento} m/s</h3><br /><br />
           </div>
-          <div class="col-lg-4 column" style="border-left: 1px solid slategray">
-            <h2  style="text-decoration: underline; font-weight: bold;">Outros</h2>
+          <div class="col-lg-4 column" style="border-left: 1px solid #777">
+            <h2>Outros</h2>
               <h3><b>Frequência CA:</b> <fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</h3>
               <h3><b>Corrente CA:</b> <fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</h3>
               <h3><b>Corrente CC:</b> <fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</h3>
