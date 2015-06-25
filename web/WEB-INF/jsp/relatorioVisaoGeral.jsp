@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Relatório</title>
+    <title>Relatório - Visão Geral do Sistema</title>
 
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
@@ -42,6 +42,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 16px;">Relatórios<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="relatorio.html">Relatório</a></li>
+                            <li role="separator" class="divider"></li>
                             <li><a href="relatorioVisaoGeral.html">Visão Geral do Sistema</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="relatorioSensores.html">Sensores</a></li>

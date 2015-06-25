@@ -25,4 +25,25 @@ public class RelatorioLeiturasController {
         return "relatorio";
     }
 
+    @RequestMapping("relatorioVisaoGeral.html")
+    public String relatorioVisaoGeral(Model model) {
+        List<LeituraInversor> leituras = dao.findLeituras();
+        model.addAttribute("leituras", leituras);
+        return "relatorioVisaoGeral";
+    }
+
+    @RequestMapping("relatorioSensores.html")
+    public String relatorioSensores(Model model) {
+        List<LeituraInversor> leituras = dao.findLeituras();
+        model.addAttribute("leituras", leituras);
+        return "relatorioSensores";
+    }
+
+    @RequestMapping("relatorioOutros.html")
+    public String relatorioOutros(Model model) {
+        List<LeituraInversor> leituras = dao.findLeituras();
+        model.addAttribute("leituras", leituras);
+        return "relatorioOutros";
+    }
+
 }

@@ -12,7 +12,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Relatório</title>
+  <title>Relatório - Sensores</title>
 
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
@@ -68,6 +68,7 @@
       </tr>
       <c:forEach items="${leituras}" var="leitura">
         <tr>
+          <td><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
           <td>${leitura.tempModulos}</td>
           <td>${leitura.temAmbiente}</td>
           <td>${leitura.irradiancia}</td>

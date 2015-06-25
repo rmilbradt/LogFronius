@@ -12,7 +12,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Relatório</title>
+  <title>Relatório - Outros</title>
 
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
@@ -69,12 +69,12 @@
       </tr>
       <c:forEach items="${leituras}" var="leitura">
         <tr>
+          <td><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
           <td><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/></td>
           <td><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/></td>
           <td><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/></td>
           <td><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/></td>
           <td><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/></td>
-
         </tr>
       </c:forEach>
     </table>
