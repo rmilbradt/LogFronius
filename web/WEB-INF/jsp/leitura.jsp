@@ -18,7 +18,7 @@
 
       <style type="text/css">
         body {color: #777;}
-        h2 {font-size: 28px; font-weight: bold}
+        h2 {font-size: 28px; color: #000000;}
         h3 {font-size: 20px;}
       </style>
   </head>
