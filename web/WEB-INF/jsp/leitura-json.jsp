@@ -1,7 +1,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 {
   id: "${leitura.id}",
-  dataHoraLeitura: "<fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" />",
+  dataHoraLeitura: "<fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" />",
   potencia: "<fmt:formatNumber value="${leitura.potencia}" pattern="#,##0.00"/> W",
   energiaDia: "<fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh",
   energiaAnual: "<fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,##0.00"/> KWh",
