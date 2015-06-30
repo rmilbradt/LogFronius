@@ -21,6 +21,9 @@
         h2 {font-size: 28px; color: #000000;}
         h3 {font-size: 20px;}
       </style>
+      <script type="application/javascript">
+        setInterval(function(){ alert("Hello"); }, 10000);
+      </script>
   </head>
   <body>
 
