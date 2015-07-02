@@ -29,9 +29,7 @@ public class LeituraUrls {
         new Thread(new ThreadLeituras()).start();
     }
 
-    public LeituraInversor getUltimaLeitura() {
-        return ultimaLeitura;
-    }
+    public LeituraInversor getUltimaLeitura() { return ultimaLeitura; }
 
     public LeituraInversor executaLeitura() throws IOException {
 
