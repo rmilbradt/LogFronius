@@ -72,8 +72,8 @@
                     <td><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
                     <td><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0.00"/></td>
                     <td><fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/></td>
-                    <td><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,##0.00"/></td>
-                    <td><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,##0.00"/></td>
+                    <td><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,###,##0.00"/></td>
+                    <td><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,###,##0.00"/></td>
                 </tr>
             </c:forEach>
         </table>

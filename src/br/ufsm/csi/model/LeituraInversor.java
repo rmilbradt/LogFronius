@@ -17,7 +17,7 @@ public class LeituraInversor {
     @GeneratedValue
     private Long id;
     private Integer tempModulos;
-    private Integer temAmbiente;
+    private Integer tempAmbiente;
     private Integer irradiancia;
     private Integer vento;
     private double energiaDia;
@@ -47,9 +47,9 @@ public class LeituraInversor {
 
     public Integer getTempModulos() { return tempModulos; }
 
-    public Integer getTemAmbiente() { return temAmbiente; }
+    public Integer getTempAmbiente() { return tempAmbiente; }
 
-    public void setTemAmbiente(Integer temAmbiente) { this.temAmbiente = temAmbiente; }
+    public void setTempAmbiente(Integer temAmbiente) { this.tempAmbiente = temAmbiente; }
 
     public Integer getIrradiancia() { return irradiancia; }
 

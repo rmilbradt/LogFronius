@@ -70,7 +70,7 @@
         <tr>
           <td><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd/MM/yyyy HH:mm:ss" /></td>
           <td>${leitura.tempModulos}</td>
-          <td>${leitura.temAmbiente}</td>
+          <td>${leitura.tempAmbiente}</td>
           <td>${leitura.irradiancia}</td>
           <td>${leitura.vento}</td>
         </tr>
