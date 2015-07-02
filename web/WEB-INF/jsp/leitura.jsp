@@ -15,6 +15,8 @@
 
       <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
       <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
+      <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
 
       <style type="text/css">
         body {color: #777;}
@@ -22,14 +24,21 @@
         h3 {font-size: 20px;}
       </style>
 
-    <script type="application/javascript">
-      $.ajax({
-        url: "leitura-json.html",
-        context: document.body
-      }).done(function() {
-        $( this ).addClass( "done" );
-        setInterval(function(){ alert("Hello"); }, 10000);
-      });
+    <script type="text/javascript">
+      setInterval(function(){
+        document.getElementById('carreg').style.display = 'block';
+        $.ajax({
+          url: "leitura-json.html",
+          context: document.body,
+          success: function(result) {
+            var leitura = JSON.parse(result);
+            $(data).html(leitura.dataHoraLeitura);
+
+          }
+        }).done(function() {
+          document.getElementById('carreg').style.display = 'none';
+        });
+      }, 10000);
     </script>
 
 
@@ -69,7 +78,7 @@
 </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
-
+<div align="center" style="display: none" id="carreg">Carregando...</div>
 <div class="row">
 <div class="col-md-12 column" style="margin-top: 50px;">
 
@@ -101,12 +110,11 @@
 </div>
 </div>
 
-<h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></b></h4>
+<h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <span id="data"><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></span></b></h4>
 
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+
 
 </body>
 
