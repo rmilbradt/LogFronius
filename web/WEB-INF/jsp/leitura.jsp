@@ -52,81 +52,79 @@
         });
       }, 10000);
     </script>
-
-
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="navbar-header">
-  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
-  <a class="navbar-brand" href="leitura.html" style="font-size: 27px;"><b>Inversor Fronius Politécnico</b></a>
-</div>
-<!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 16px;">Relatórios<span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a href="relatorio.html">Relatório</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="relatorioVisaoGeral.html">Visão Geral do Sistema</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="relatorioSensores.html">Sensores</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="relatorioOutros.html">Outros</a></li>
-      </ul>
-    </li>
-  </ul>
-</div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
-<div align="center" style="display: none" id="carreg"><img src="imagens/carregando.gif"/></div>
-<div class="row">
-<div class="col-md-12 column" style="margin-top: 50px;">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="leitura.html" style="font-size: 27px;"><b>Inversor Fronius Politécnico</b></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 16px;">Relatórios<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="relatorio.html">Relatório</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioVisaoGeral.html">Visão Geral do Sistema</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioSensores.html">Sensores</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="relatorioOutros.html">Outros</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-<div class="row">
-  <div class="col-lg-4 column">
-    <h2>Visão Geral do Sistema</h2>
-      <h3><b>Potência:</b> <span id="potencia"><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0"/> W</span></h3>
-      <h3><b>Dia:</b> <span id="energiaDia"><fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh</span></h3>
-      <h3><b>Ano:</b> <span id="energiaAnual"><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,###,##0.00"/> KWh</span></h3>
-      <h3><b>Total:</b> <span id="energiaTotal"><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,###,##0.00"/> KWh</span></h3>
+    <div align="center" style="display: none" id="carreg"><img src="imagens/carregando.gif"/></div>
+      <div class="row">
+        <div class="col-md-12 column" style="margin-top: 50px;">
+
+        <div class="row">
+          <div class="col-lg-4 column">
+            <h2>Visão Geral do Sistema</h2>
+              <h3><b>Potência:</b> <span id="potencia"><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0"/> W</span></h3>
+              <h3><b>Dia:</b> <span id="energiaDia"><fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh</span></h3>
+              <h3><b>Ano:</b> <span id="energiaAnual"><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,###,##0.00"/> KWh</span></h3>
+              <h3><b>Total:</b> <span id="energiaTotal"><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,###,##0.00"/> KWh</span></h3>
+          </div>
+          <div class="col-lg-4 column" style="border-left: 1px solid #777;">
+              <h2>Sensores</h2>
+              <h3><b>Temperatura módulos:</b> <span id="tempModulos">${leitura.tempModulos} ºC</span></h3>
+              <h3><b>Temperatura ambiente:</b> <span id="tempAmbiente">${leitura.tempAmbiente} ºC</span></h3>
+              <h3><b>Irradiância:</b> <span id="irradiancia">${leitura.irradiancia} W/m²</span></h3>
+              <h3><b>Vento:</b> <span id="vento">${leitura.vento} m/s</span></h3><br /><br />
+          </div>
+          <div class="col-lg-4 column" style="border-left: 1px solid #777">
+            <h2>Outros</h2>
+              <h3><b>Frequência CA:</b> <span id="acFrequency"><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</span></h3>
+              <h3><b>Corrente CA:</b> <span id="acCurrent"><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</span></h3>
+              <h3><b>Corrente CC:</b> <span id="dcCurrent"><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</span></h3>
+              <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span></h3>
+              <h3><b>Tensão CC:</b> <span id="dcVoltage"><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/> V</span></h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <span id="data"><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></span></b></h4>
+
   </div>
-  <div class="col-lg-4 column" style="border-left: 1px solid #777;">
-      <h2>Sensores</h2>
-      <h3><b>Temperatura módulos:</b> <span id="tempModulos">${leitura.tempModulos} ºC</span></h3>
-      <h3><b>Temperatura ambiente:</b> <span id="tempAmbiente">${leitura.tempAmbiente} ºC</span></h3>
-      <h3><b>Irradiância:</b> <span id="irradiancia">${leitura.irradiancia} W/m²</span></h3>
-      <h3><b>Vento:</b> <span id="vento">${leitura.vento} m/s</span></h3><br /><br />
-  </div>
-  <div class="col-lg-4 column" style="border-left: 1px solid #777">
-    <h2>Outros</h2>
-      <h3><b>Frequência CA:</b> <span id="acFrequency"><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</span></h3>
-      <h3><b>Corrente CA:</b> <span id="acCurrent"><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</span></h3>
-      <h3><b>Corrente CC:</b> <span id="dcCurrent"><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</span></h3>
-      <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span></h3>
-      <h3><b>Tensão CC:</b> <span id="dcVoltage"><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/> V</span></h3>
-  </div>
-
-</div>
-</div>
-</div>
-
-<h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <span id="data"><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></span></b></h4>
-
-</div>
-
-
 
 </body>
 
