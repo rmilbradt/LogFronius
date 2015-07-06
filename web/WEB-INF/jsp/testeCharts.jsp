@@ -32,58 +32,63 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
     setInterval(function(){
       document.getElementById('carreg').style.display = 'block';
       $.ajax({
         url: "leitura-json.html",
         context: document.body,
         success: function(result) {
-        var leitura = JSON.parse(result);
-        $().html(leitura.temAmbiente);
+          var leitura = JSON.parse(result);
 
-          google.load("visualization", "1", {packages:["gauge"]});
-          google.setOnLoadCallback(drawChart);
-          function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-              ['Label', 'Value'],
-              ['Memory', 80],
-              ['CPU', 55],
-              ['Network', 68]
-            ]);
-
-            var options = {
-              width: 400, height: 120,
-              redFrom: 90, redTo: 100,
-              yellowFrom:75, yellowTo: 90,
-              minorTicks: 5
-            };
-
-            var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-            chart.draw(data, options);
-
-            setInterval(function() {
-              data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-              chart.draw(data, options);
-            }, 13000);
-            setInterval(function() {
-              data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-              chart.draw(data, options);
-            }, 5000);
-            setInterval(function() {
-              data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-              chart.draw(data, options);
-            }, 26000);
-          }
-        }
-
+         $(potencia).html(leitura.potencia);
 
       }).done(function() {
         document.getElementById('carreg').style.display = 'none';
       });
     }, 10000);
+  </script>-->
+
+  <script type="text/javascript">
+    google.load('visualization', '1.1', {packages: ['line']});
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Potencia');
+
+      data.addRows([
+        [1,  41.8],
+        [2,  30.9],
+        [3,  25.4],
+        [4,  11.7],
+        [5,  11.9],
+        [6,   8.8],
+        [7,   7.6],
+        [8,  12.3],
+        [9,  16.9],
+        [10, 12.8],
+        [11,  5.3],
+        [12,  6.6],
+        [13,  4.8],
+        [14,  4.2]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Potencia',
+          subtitle: 'Ultima hora'
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+
+      chart.draw(data, options);
+    }
   </script>
 
 </head>
@@ -127,7 +132,7 @@
   <div align="center" style="display: none" id="carreg"><img src="imagens/carregando.gif"/></div>
   <div class="row">
 
-    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+    <div id="linechart_material"></div>
 
   </div>
 
