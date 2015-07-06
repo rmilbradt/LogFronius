@@ -15,6 +15,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -60,20 +61,10 @@
       data.addColumn('number', 'Potencia');
 
       data.addRows([
-        [1,  41.8],
-        [2,  30.9],
-        [3,  25.4],
-        [4,  11.7],
-        [5,  11.9],
-        [6,   8.8],
-        [7,   7.6],
-        [8,  12.3],
-        [9,  16.9],
-        [10, 12.8],
-        [11,  5.3],
-        [12,  6.6],
-        [13,  4.8],
-        [14,  4.2]
+      <c:forEach items="${leituras}" var="leitura" varStatus="st">
+        ['<fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="HH:mm:ss" />', ${leitura.potencia}]
+            <c:if test="${not st.last}">, </c:if>
+      </c:forEach>
       ]);
 
       var options = {

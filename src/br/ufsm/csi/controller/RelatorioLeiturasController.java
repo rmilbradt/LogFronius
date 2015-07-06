@@ -48,7 +48,7 @@ public class RelatorioLeiturasController {
 
     @RequestMapping("testeCharts.html")
     public String testeCharts(Model model) {
-        List<LeituraInversor> leituras = dao.findLeituras();
+        List<LeituraInversor> leituras = dao.findLeiturasUltimasHoras(2);
         model.addAttribute("leituras", leituras);
         return "testeCharts";
     }
