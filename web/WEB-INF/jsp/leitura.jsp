@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,6 +18,7 @@
       <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
       <script src="js/jquery-2.1.4.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
       <style type="text/css">
         body {color: #777;}
@@ -25,6 +27,28 @@
       </style>
 
     <script type="text/javascript">
+      var chart;
+      var options;
+      var carregou = false;
+
+      google.load('visualization', '1.1', {packages: ['line']});
+      google.setOnLoadCallback(drawChart);
+
+
+      function drawChart() {
+        chart = new google.charts.Line(document.getElementById('linechart_material'));
+        options = {
+          chart: {
+            title: 'Potencia',
+            subtitle: 'Ultimas duas hora'
+          },
+          width: 1000,
+          height: 500
+        };
+        carregou = true;
+      }
+
+
       setInterval(function(){
         document.getElementById('carreg').style.display = 'block';
         $.ajax({
@@ -50,6 +74,26 @@
         }).done(function() {
           document.getElementById('carreg').style.display = 'none';
         });
+
+        if (carregou) {
+          $.ajax({
+            url: "chart-json.html",
+            context: document.body,
+            success: function (result) {
+              var leituras = JSON.parse(result);
+
+              var data = new google.visualization.DataTable();
+              data.addColumn('timeofday', 'Data');
+              data.addColumn('number', 'Potência');
+
+              data.addRows(leituras);
+              chart.draw(data, options);
+            }
+          }).done(function () {
+            document.getElementById('carreg').style.display = 'none';
+          });
+        }
+
       }, 10000);
     </script>
 </head>
@@ -123,6 +167,12 @@
     </div>
 
   <h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <span id="data"><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></span></b></h4>
+
+    <div class="row">
+      <div class="col-md-12 column">
+        <div id="linechart_material"></div>
+      </div>
+    </div>
 
   </div>
 
