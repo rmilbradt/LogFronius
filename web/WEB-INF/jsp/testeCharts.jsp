@@ -57,12 +57,12 @@
     function drawChart() {
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Day');
-      data.addColumn('number', 'Potencia');
+      data.addColumn('timeofday' , 'Data');
+      data.addColumn('number' , 'Potência');
 
       data.addRows([
       <c:forEach items="${leituras}" var="leitura" varStatus="st">
-        ['<fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="HH:mm:ss" />', ${leitura.potencia}]
+        [[<fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="HH', 'mm', 'ss"/>], ${leitura.potencia}]
             <c:if test="${not st.last}">, </c:if>
       </c:forEach>
       ]);
@@ -70,9 +70,9 @@
       var options = {
         chart: {
           title: 'Potencia',
-          subtitle: 'Ultima hora'
+          subtitle: 'Ultimas duas hora'
         },
-        width: 900,
+        width: 1000,
         height: 500
       };
 
@@ -122,8 +122,8 @@
 
   <div align="center" style="display: none" id="carreg"><img src="imagens/carregando.gif"/></div>
   <div class="row">
-
-    <div id="linechart_material"></div>
+    <div class="col-md-12 column">
+      <div id="linechart_material"></div>
 
   </div>
 
