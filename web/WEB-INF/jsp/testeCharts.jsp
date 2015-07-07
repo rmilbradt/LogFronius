@@ -124,7 +124,7 @@
   <div class="row">
     <div class="col-md-12 column">
       <div id="linechart_material"></div>
-
+    </div>
   </div>
 
   <h4 style="text-align: right; padding-top: 50px;"><b>Acesso em <span id="data"><fmt:formatDate value="${leitura.dataHoraLeitura}" pattern="dd 'de' MMMMMMMMMMM 'de' yyyy 'às' HH:mm:ss" /></span></b></h4>
