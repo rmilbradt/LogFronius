@@ -34,12 +34,11 @@
       google.load('visualization', '1.1', {packages: ['line']});
       google.setOnLoadCallback(drawChart);
 
-
       function drawChart() {
         chart = new google.charts.Line(document.getElementById('linechart_material'));
         options = {
           chart: {
-            title: 'Potencia',
+            title: 'Potência',
             subtitle: 'Ultimas duas hora'
           },
           width: 1000,
@@ -76,22 +75,16 @@
         });
 
         if (carregou) {
-          $.ajax({
+          var jsonData = $.ajax({
             url: "chart-json.html",
-            context: document.body,
-            success: function (result) {
-              var leituras = JSON.parse(result);
+            dataType:"json",
+            async: false
+          }).responseText;
 
-              var data = new google.visualization.DataTable();
-              data.addColumn('timeofday', 'Data');
-              data.addColumn('number', 'Potência');
-
-              data.addRows(leituras);
+              var data = new google.visualization.DataTable(jsonData);
               chart.draw(data, options);
-            }
-          }).done(function () {
-            document.getElementById('carreg').style.display = 'none';
-          });
+
+
         }
 
       }, 10000);
