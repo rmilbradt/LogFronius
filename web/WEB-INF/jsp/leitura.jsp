@@ -81,10 +81,8 @@
             async: false
           }).responseText;
 
-              var data = new google.visualization.DataTable(jsonData);
-              chart.draw(data, options);
-
-
+          var data = new google.visualization.DataTable(jsonData);
+          chart.draw(data, options);
         }
 
       }, 10000);
