@@ -69,22 +69,23 @@
             $(dcCurrent).html(leitura.dcCurrent);
             $(acVoltage).html(leitura.acVoltage);
             $(dcVoltage).html(leitura.dcVoltage);
+
+
+            if (carregou) {
+              var jsonData = $.ajax({
+                url: "chart-json.html",
+                dataType:"json",
+                async: false
+              }).responseText;
+
+              var data = new google.visualization.DataTable(jsonData);
+              chart.draw(data, options);
+            }
+
           }
         }).done(function() {
           document.getElementById('carreg').style.display = 'none';
         });
-
-        if (carregou) {
-          var jsonData = $.ajax({
-            url: "chart-json.html",
-            dataType:"json",
-            async: false
-          }).responseText;
-
-          var data = new google.visualization.DataTable(jsonData);
-          chart.draw(data, options);
-        }
-
       }, 10000);
     </script>
 </head>
