@@ -30,6 +30,7 @@
       var chart;
       var options;
       var carregou = false;
+      var nomeVariavel = "potencia";
 
       google.load('visualization', '1.1', {packages: ['line']});
       google.setOnLoadCallback(drawChart);
@@ -45,6 +46,20 @@
           height: 500
         };
         carregou = true;
+      }
+
+      function trocaGrafico(variavel) {
+        nomeVariavel = variavel;
+        if (carregou) {
+          var jsonData = $.ajax({
+            url: "chart-json.html?variavel=" + nomeVariavel,
+            dataType:"json",
+            async: false
+          }).responseText;
+
+          var data = new google.visualization.DataTable(jsonData);
+          chart.draw(data, options);
+        }
       }
 
 
@@ -73,7 +88,7 @@
 
             if (carregou) {
               var jsonData = $.ajax({
-                url: "chart-json.html",
+                url: "chart-json.html?variavel=" + nomeVariavel,
                 dataType:"json",
                 async: false
               }).responseText;
@@ -133,7 +148,7 @@
         <div class="row">
           <div class="col-lg-4 column">
             <h2>Visão Geral do Sistema</h2>
-              <h3><b>Potência:</b> <span id="potencia"><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0"/> W</span></h3>
+              <h3><b>Potência:</b> <span id="potencia"><fmt:formatNumber value="${leitura.potencia}" pattern="#,##0"/> W</span> <button name="troca" onclick="trocaGrafico('potencia');" value="troca"/></h3>
               <h3><b>Dia:</b> <span id="energiaDia"><fmt:formatNumber value="${leitura.energiaDia}" pattern="#,##0.00"/> Wh</span></h3>
               <h3><b>Ano:</b> <span id="energiaAnual"><fmt:formatNumber value="${leitura.energiaAnual}" pattern="#,###,##0.00"/> KWh</span></h3>
               <h3><b>Total:</b> <span id="energiaTotal"><fmt:formatNumber value="${leitura.energiaTotal}" pattern="#,###,##0.00"/> KWh</span></h3>
@@ -150,7 +165,7 @@
               <h3><b>Frequência CA:</b> <span id="acFrequency"><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</span></h3>
               <h3><b>Corrente CA:</b> <span id="acCurrent"><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</span></h3>
               <h3><b>Corrente CC:</b> <span id="dcCurrent"><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</span></h3>
-              <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span></h3>
+              <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span> <button name="troca" onclick="trocaGrafico('tensaoCA');" value="troca"/> </h3>
               <h3><b>Tensão CC:</b> <span id="dcVoltage"><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/> V</span></h3>
           </div>
 
