@@ -98,7 +98,6 @@
   <div class="container">
 
 
-
     <div align="center" style="display: none" id="carreg"><img src="imagens/carregando.gif"/></div>
       <div class="row">
         <div class="col-md-12 column" style="margin-top: 50px;">
