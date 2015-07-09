@@ -15,7 +15,7 @@ public class ChartController {
     @Autowired
     private LeituraInversorDAO dao;
 
-    @RequestMapping("chart-json.html")
+    @RequestMapping("chart.json")
     public String dadosChartJSON(Model model) {
         model.addAttribute("leituras", dao.findLeiturasUltimasHoras(2));
         return "chart-json";

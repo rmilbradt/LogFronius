@@ -29,7 +29,7 @@ public class UltimaLeituraController {
         return "leitura";
     }
 
-    @RequestMapping(value = "leitura-json.html")
+    @RequestMapping(value = "leitura.json")
     public String leituraJSon(Model model) throws IOException {
         LeituraInversor l = leituraUrls.getUltimaLeitura();
         model.addAttribute("leitura", l);

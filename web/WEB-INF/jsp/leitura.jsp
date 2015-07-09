@@ -1,3 +1,7 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="dec" uri="http://www.opensymphony.com/sitemesh/decorator" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: politecnico
@@ -40,7 +44,7 @@
         nomeVariavel = variavel;
         if (carregou) {
           var jsonData = $.ajax({
-            url: "chart-json.html?variavel=" + nomeVariavel,
+            url: "chart.json?variavel=" + nomeVariavel,
             dataType:"json",
             async: false
           }).responseText;
@@ -54,7 +58,7 @@
       setInterval(function(){
         document.getElementById('carreg').style.display = 'block';
         $.ajax({
-          url: "leitura-json.html",
+          url: "leitura.json",
           context: document.body,
           success: function(result) {
             var leitura = JSON.parse(result);
@@ -76,7 +80,7 @@
 
             if (carregou) {
               var jsonData = $.ajax({
-                url: "chart-json.html?variavel=" + nomeVariavel,
+                url: "chart.json?variavel=" + nomeVariavel,
                 dataType:"json",
                 async: false
               }).responseText;
