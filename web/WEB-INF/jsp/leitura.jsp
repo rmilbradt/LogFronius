@@ -122,7 +122,7 @@
               <h3><b>Frequência CA:</b> <span id="acFrequency"><fmt:formatNumber value="${leitura.acFrequency}" pattern="#,###0.00"/> Hz</span></h3>
               <h3><b>Corrente CA:</b> <span id="acCurrent"><fmt:formatNumber value="${leitura.acCurrent}" pattern="#,##0.00"/> A</span></h3>
               <h3><b>Corrente CC:</b> <span id="dcCurrent"><fmt:formatNumber value="${leitura.dcCurrent}" pattern="#,##0.00"/> A</span></h3>
-              <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span> <button name="troca" onclick="trocaGrafico('tensaoCA');" value="troca"/> </h3>
+              <h3><b>Tensão CA:</b> <span id="acVoltage"><fmt:formatNumber value="${leitura.acVoltage}" pattern="#,##0.00"/> V</span> <button name="troca" onclick="trocaGrafico('acVoltage');" value="troca"/> </h3>
               <h3><b>Tensão CC:</b> <span id="dcVoltage"><fmt:formatNumber value="${leitura.dcVoltage}" pattern="#,##0.00"/> V</span></h3>
           </div>
 
