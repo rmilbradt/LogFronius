@@ -58,7 +58,20 @@
 
   <h2 style="margin: 60px; text-align: center">Relatório</h2>
 
+  <form class="form-inline" role="form" action="relatorio.html" method="post">
+    <div class="form-group">
+      <label for="dataInicial">De</label>
+      <input type="date" class="form-control" id="dataInicial" name="dataInicial">
+    </div>
+    <div class="form-group">
+      <label for="dataFinal">até</label>
+      <input type="date" class="form-control" id="dataFinal" name="dataFinal">
+    </div>
+    <button type="submit" class="btn btn-default">Exibir</button>
+  </form>
+
   <div class="row">
+
     <table class="table table-bordered table-striped">
       <tr>
         <th>Data</th>

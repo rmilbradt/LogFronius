@@ -21,7 +21,7 @@ public class RelatorioLeiturasController {
     private LeituraInversorDAO dao;
 
     @RequestMapping("relatorio.html")
-    public String relatorio(@DateTimeFormat(pattern = "dd/MM/yyyy") Date dataInicial, @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataFinal, Model model) {
+    public String relatorio(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial, @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, Model model) {
         List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         model.addAttribute("leituras", leituras);
         return "relatorio";
