@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,6 +31,20 @@ public class LeituraInversorDAO {
     @Transactional
     public List<LeituraInversor> findLeituras() {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(LeituraInversor.class);
+        criteria.addOrder(Order.asc("dataHoraLeitura"));
+        return criteria.list();
+    }
+
+    @Transactional
+    public List<LeituraInversor> findLeiturasByData(Date dataInicial, Date dataFinal) {
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(LeituraInversor.class);
+        if (dataInicial != null && dataFinal != null) {
+            criteria.add(Restrictions.between("dataHoraLeitura", dataInicial, dataFinal));
+        } else if (dataInicial != null) {
+            criteria.add(Restrictions.ge("dataHoraLeitura", dataInicial));
+        } else if (dataFinal != null) {
+            criteria.add(Restrictions.le("dataHoraLeitura", dataFinal));
+        }
         criteria.addOrder(Order.asc("dataHoraLeitura"));
         return criteria.list();
     }
