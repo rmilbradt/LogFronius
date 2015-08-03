@@ -55,7 +55,19 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <h2 style="margin: 60px; text-align: center">Relatório - Outros</h2>
+  <h2 style="margin-bottom: 30px; text-align: center">Relatório - Outros</h2>
+
+  <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorio.html" method="post">
+    <div class="form-group">
+      <label for="dataInicial">De</label>
+      <input type="date" class="form-control" id="dataInicial" name="dataInicial">
+    </div>
+    <div class="form-group">
+      <label for="dataFinal">até</label>
+      <input type="date" class="form-control" id="dataFinal" name="dataFinal">
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+  </form>
 
   <div class="row">
     <table class="table table-bordered table-striped">
