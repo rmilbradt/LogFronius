@@ -28,22 +28,22 @@ public class RelatorioLeiturasController {
     }
 
     @RequestMapping("relatorioVisaoGeral.html")
-    public String relatorioVisaoGeral(Model model) {
-        List<LeituraInversor> leituras = dao.findLeituras();
+    public String relatorioVisaoGeral(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial, @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, Model model) {
+        List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         model.addAttribute("leituras", leituras);
         return "relatorioVisaoGeral";
     }
 
     @RequestMapping("relatorioSensores.html")
-    public String relatorioSensores(Model model) {
-        List<LeituraInversor> leituras = dao.findLeituras();
+    public String relatorioSensores(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial, @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, Model model) {
+        List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         model.addAttribute("leituras", leituras);
         return "relatorioSensores";
     }
 
     @RequestMapping("relatorioOutros.html")
-    public String relatorioOutros(Model model) {
-        List<LeituraInversor> leituras = dao.findLeituras();
+    public String relatorioOutros(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial, @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, Model model) {
+        List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         model.addAttribute("leituras", leituras);
         return "relatorioOutros";
     }

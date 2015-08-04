@@ -57,7 +57,7 @@
 
   <h2 style="margin-bottom: 30px; text-align: center">Relatório - Sensores</h2>
 
-  <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorio.html" method="post">
+  <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorioSensores.html" method="post">
     <div class="form-group">
       <label for="dataInicial">De</label>
       <input type="date" class="form-control" id="dataInicial" name="dataInicial">
