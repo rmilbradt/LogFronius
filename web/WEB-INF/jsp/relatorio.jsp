@@ -58,17 +58,18 @@
 
   <h2 style="margin-bottom: 30px; text-align: center">Relatório</h2>
 
-  <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorio.html" method="post">
+  <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorio.html" method="get">
     <div class="form-group">
       <label for="dataInicial">De</label>
-      <input type="date" class="form-control" id="dataInicial" name="dataInicial">
+      <input type="date" class="form-control" id="dataInicial" name="dataInicial" value="${param.dataInicial}">
     </div>
     <div class="form-group">
       <label for="dataFinal">até</label>
-      <input type="date" class="form-control" id="dataFinal" name="dataFinal">
+      <input type="date" class="form-control" id="dataFinal" name="dataFinal" value="${param.dataFinal}">
     </div>
     <button type="submit" class="btn btn-primary">Filtrar</button>
   </form>
+  <a href="relatorio.json?dataInicial=${param.dataInicial}&dataFinal=${param.dataFinal}" class="btn btn-primary">Exportar CSV</a>
 
   <div class="row">
 

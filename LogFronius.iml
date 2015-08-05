@@ -36,9 +36,9 @@
     <orderEntry type="library" name="javax.json:javax.json-api:1.0" level="project" />
     <orderEntry type="library" name="org.glassfish:javax.json:1.0.4" level="project" />
     <orderEntry type="library" name="javax.json-1.0.4" level="project" />
-    <orderEntry type="library" name="javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="commons-dbcp:commons-dbcp:1.4" level="project" />
     <orderEntry type="library" name="hsqldb" level="project" />
     <orderEntry type="library" name="opensymphony:sitemesh:2.5-atlassian-11" level="project" />
+    <orderEntry type="library" name="javax.servlet:jstl:1.2" level="project" />
   </component>
 </module>
