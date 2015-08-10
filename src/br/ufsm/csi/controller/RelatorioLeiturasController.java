@@ -63,9 +63,11 @@ public class RelatorioLeiturasController {
             out.write(";".getBytes());
             out.write(Double.toString(leituraInversor.getEnergiaTotal()).getBytes());
             out.write(";".getBytes());
-            out.write(leituraInversor.getTempModulos().toString().getBytes());
+            out.write(Integer.toString(leituraInversor.getTempModulos()).getBytes());
             out.write(";".getBytes());
-            out.write(leituraInversor.getTempAmbiente().toString().getBytes());
+            if (leituraInversor.getTempAmbiente() != null) {
+                out.write(leituraInversor.getTempAmbiente().toString().getBytes());
+            }
             out.write(";".getBytes());
             out.write(leituraInversor.getIrradiancia().toString().getBytes());
             out.write(";".getBytes());
