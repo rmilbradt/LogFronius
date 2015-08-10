@@ -15,6 +15,9 @@
           <element id="library" level="project" name="hsqldb" />
           <element id="library" level="project" name="commons-dbcp:commons-dbcp:1.4" />
           <element id="library" level="project" name="opensymphony:sitemesh:2.5-atlassian-11" />
+          <element id="library" level="project" name="org.glassfish:javax.json:1.0.4" />
+          <element id="library" level="project" name="javax.json:javax.json-api:1.0" />
+          <element id="library" level="project" name="javax.servlet:jstl:1.2" />
         </element>
       </element>
     </root>

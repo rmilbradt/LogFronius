@@ -69,7 +69,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Filtrar</button>
   </form>
-  <a href="relatorio.json?dataInicial=${param.dataInicial}&dataFinal=${param.dataFinal}" class="btn btn-primary">Exportar CSV</a>
+  <a href="relatorio.json" class="btn btn-primary" download="relatorio.csv">Exportar CSV</a>
 
   <div class="row">
 

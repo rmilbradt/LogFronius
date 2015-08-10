@@ -34,14 +34,52 @@ public class RelatorioLeiturasController {
     public String relatorioCSV(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial,
                                @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, HttpServletResponse response) throws IOException {
         OutputStream out = response.getOutputStream();
+        //response.addHeader("Content-type", "text/CSV");
+        //response.addHeader("Content-Disposition", "attachment;filename=relatorio.csv");
         List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
-        out.write("coluna1;".getBytes());
-        out.write("coluna2;".getBytes());
-        out.write("coluna3;".getBytes());
-        out.write("coluna4".getBytes());
+        out.write("Data;".getBytes());
+        out.write("Potência (W);".getBytes());
+        out.write("Dia (Wh);".getBytes());
+        out.write("Ano (KWh);".getBytes());
+        out.write("Total (KWh);".getBytes());
+        out.write("Temp. Módulos (ºC);".getBytes());
+        out.write("Temp. Ambiente(ºC);".getBytes());
+        out.write("Irradiância (W/m²);".getBytes());
+        out.write("Vento (m/s);".getBytes());
+        out.write("Frequência CA (Hz);".getBytes());
+        out.write("Corrente CA (A);".getBytes());
+        out.write("Corrente CC (A);".getBytes());
+        out.write("Tensão CA (A);".getBytes());
+        out.write("Tensão CC (A);".getBytes());
         out.write("\n".getBytes());
         for (LeituraInversor leituraInversor : leituras) {
+            out.write(leituraInversor.getDataHoraLeitura().toString().getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getPotencia()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getEnergiaDia()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getEnergiaAnual()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getEnergiaTotal()).getBytes());
+            out.write(";".getBytes());
+            out.write(leituraInversor.getTempModulos().toString().getBytes());
+            out.write(";".getBytes());
+            out.write(leituraInversor.getTempAmbiente().toString().getBytes());
+            out.write(";".getBytes());
             out.write(leituraInversor.getIrradiancia().toString().getBytes());
+            out.write(";".getBytes());
+            out.write(leituraInversor.getVento().toString().getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getAcFrequency()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getAcCurrent()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getDcCurrent()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getAcVoltage()).getBytes());
+            out.write(";".getBytes());
+            out.write(Double.toString(leituraInversor.getDcVoltage()).getBytes());
             out.write(";".getBytes());
             out.write("\n".getBytes());
         }

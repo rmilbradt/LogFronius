@@ -40,5 +40,6 @@
     <orderEntry type="library" name="hsqldb" level="project" />
     <orderEntry type="library" name="opensymphony:sitemesh:2.5-atlassian-11" level="project" />
     <orderEntry type="library" name="javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="jsp-api-2.0" level="project" />
   </component>
 </module>
