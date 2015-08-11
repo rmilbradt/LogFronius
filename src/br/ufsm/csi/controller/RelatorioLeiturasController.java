@@ -34,8 +34,6 @@ public class RelatorioLeiturasController {
     public String relatorioCSV(@DateTimeFormat(pattern = "yyyy-MM-dd") Date dataInicial,
                                @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal, HttpServletResponse response) throws IOException {
         OutputStream out = response.getOutputStream();
-        //response.addHeader("Content-type", "text/CSV");
-        //response.addHeader("Content-Disposition", "attachment;filename=relatorio.csv");
         List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         out.write("Data;".getBytes());
         out.write("Potência (W);".getBytes());

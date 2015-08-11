@@ -56,7 +56,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <h2 style="margin-bottom: 30px; text-align: center">Relatório</h2>
+  <h2 style="margin-bottom: 20px; text-align: center">Relatório</h2>
 
   <form style="margin-bottom: 30px; text-align: center" class="form-inline" role="form" action="relatorio.html" method="get">
     <div class="form-group">
@@ -68,8 +68,8 @@
       <input type="date" class="form-control" id="dataFinal" name="dataFinal" value="${param.dataFinal}">
     </div>
     <button type="submit" class="btn btn-primary">Filtrar</button>
+    <a href="relatorio.json?dataInicial=${param.dataInicial}&dataFinal=${param.dataFinal}" class="btn btn-success" download="Fronius de ${param.dataInicial} a ${param.dataFinal}.csv">Exportar CSV</a>
   </form>
-  <a href="relatorio.json?dataInicial=${param.dataInicial}&dataFinal=${param.dataFinal}" class="btn btn-primary" download="relatorio.csv">Exportar CSV</a>
 
   <div class="row">
 
