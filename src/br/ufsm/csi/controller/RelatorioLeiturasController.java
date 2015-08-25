@@ -37,19 +37,19 @@ public class RelatorioLeiturasController {
         OutputStream out = response.getOutputStream();
         List<LeituraInversor> leituras = dao.findLeiturasByData(dataInicial, dataFinal);
         out.write("Data;".getBytes());
-        out.write("Potência (W);".getBytes());
+        out.write("Potï¿½ncia (W);".getBytes());
         out.write("Dia (Wh);".getBytes());
         out.write("Ano (KWh);".getBytes());
         out.write("Total (KWh);".getBytes());
-        out.write("Temp. Módulos (ºC);".getBytes());
-        out.write("Temp. Ambiente(ºC);".getBytes());
-        out.write("Irradiância (W/m²);".getBytes());
+        out.write("Temp. Mï¿½dulos (ï¿½C);".getBytes());
+        out.write("Temp. Ambiente(ï¿½C);".getBytes());
+        out.write("Irradiï¿½ncia (W/mï¿½);".getBytes());
         out.write("Vento (m/s);".getBytes());
-        out.write("Frequência CA (Hz);".getBytes());
+        out.write("Frequï¿½ncia CA (Hz);".getBytes());
         out.write("Corrente CA (A);".getBytes());
         out.write("Corrente CC (A);".getBytes());
-        out.write("Tensão CA (A);".getBytes());
-        out.write("Tensão CC (A);".getBytes());
+        out.write("Tensï¿½o CA (A);".getBytes());
+        out.write("Tensï¿½o CC (A);".getBytes());
         out.write("\n".getBytes());
         for (LeituraInversor leituraInversor : leituras) {
             out.write(leituraInversor.getDataHoraLeitura().toString().getBytes());
@@ -114,11 +114,4 @@ public class RelatorioLeiturasController {
         model.addAttribute("leituras", leituras);
         return "testeCharts";
     }
-
-    @RequestMapping("cadastra-inversor.html")
-    public String cadastra(Inversor inversor) {
-
-        return "cadastra-inversor";
-    }
-
 }

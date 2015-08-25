@@ -1,21 +1,24 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: 201420240
+  Date: 25/08/2015
+  Time: 11:06
+  To change this template use File | Settings | File Templates.
+--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title><dec:title default="Leitura Fronius" /></title>
+  <title>Relatório</title>
+
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <style type="text/css">
-    body {color: #777;}
-    h2 {font-size: 28px; color: #000000;}
-    h3 {font-size: 20px;}
-  </style>
-  <dec:head />
+
+
 </head>
-
-
 <body>
 
   <div class="container">
@@ -60,12 +63,28 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="conteiner">
-      <dec:body />
-    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="margin-bottom: 20px; text-align: center">Inversores Cadastrados</h2>
 
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Nome</th>
+            <th>Localização</th>
+            <th>Coordenadas</th>
+            <th>Ip</th>
+          </tr>
+          <c:forEach items="${inversores}" var="inversor">
+            <tr>
+              <td>${inversor.nome}</td>
+              <td>${inversor.localizacao}</td>
+              <td>${inversor.coordenadas}</td>
+              <td>${inversor.ip}</td>
+            </tr>
+          </c:forEach>
+        </table>
+      </div>
   </div>
 
 </body>
-
 </html>
