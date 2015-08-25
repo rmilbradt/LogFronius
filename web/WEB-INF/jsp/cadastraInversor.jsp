@@ -77,7 +77,7 @@
           <label for="ip">Ip:</label>
           <input type="text" class="form-control" placeholder="ip" id="ip" name="ip">
         </div>
-        <button type="submit" class="btn btn-primary center-block">Acessar</button>
+        <button type="submit" class="btn btn-primary center-block" name="acao" value="Cadastrar">Cadastrar</button>
       </form>
 
     </div>

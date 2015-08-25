@@ -1,15 +1,26 @@
 package br.ufsm.csi.model;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by politecnico on 08/06/2015.
  */
+@Entity
+@Table(name = "INVERSORES")
 public class Inversor {
-    String nome;
-    String localizacao;
-    String coordenadas;
-    String ip;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String nome;
+    private String localizacao;
+    private String coordenadas;
+    private String ip;
 
     public String getNome() {
         return nome;
@@ -41,5 +52,21 @@ public class Inversor {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Inversor)) return false;
+
+        Inversor inversor = (Inversor) o;
+
+        return !(id != null ? !id.equals(inversor.id) : inversor.id != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }

@@ -1,6 +1,7 @@
 package br.ufsm.csi.controller;
 
 import br.ufsm.csi.beans.LeituraInversorDAO;
+import br.ufsm.csi.model.Inversor;
 import br.ufsm.csi.model.LeituraInversor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -112,6 +113,12 @@ public class RelatorioLeiturasController {
         List<LeituraInversor> leituras = dao.findLeiturasUltimasHoras(2);
         model.addAttribute("leituras", leituras);
         return "testeCharts";
+    }
+
+    @RequestMapping("cadastra-inversor.html")
+    public String cadastra(Inversor inversor) {
+
+        return "cadastra-inversor";
     }
 
 }
