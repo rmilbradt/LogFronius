@@ -43,23 +43,39 @@ public class LeituraInversorDAO {
             Calendar dataIn = Calendar.getInstance();
 
             dataIn.setTime(dataInicial);
-            dataIn.set(Calendar.HOUR_OF_DAY, dataIn.getActualMinimum(dataIn.HOUR_OF_DAY));
-            dataIn.set(Calendar.MINUTE, dataIn.getActualMinimum(dataIn.MINUTE));
-            dataIn.set(Calendar.SECOND, dataIn.getActualMinimum(dataIn.SECOND));
-            dataIn.set(Calendar.MILLISECOND, dataIn.getActualMinimum(dataIn.MILLISECOND));
+            dataIn.set(Calendar.HOUR_OF_DAY, dataIn.getActualMinimum(Calendar.HOUR_OF_DAY));
+            dataIn.set(Calendar.MINUTE, dataIn.getActualMinimum(Calendar.MINUTE));
+            dataIn.set(Calendar.SECOND, dataIn.getActualMinimum(Calendar.SECOND));
+            dataIn.set(Calendar.MILLISECOND, dataIn.getActualMinimum(Calendar.MILLISECOND));
 
             dataFim.setTime(dataFinal);
-            dataFim.set(Calendar.HOUR_OF_DAY, dataFim.getActualMaximum(dataIn.HOUR_OF_DAY));
-            dataFim.set(Calendar.MINUTE, dataFim.getActualMaximum(dataIn.MINUTE));
-            dataFim.set(Calendar.SECOND, dataFim.getActualMaximum(dataIn.SECOND));
-            dataFim.set(Calendar.MILLISECOND, dataFim.getActualMaximum(dataIn.MILLISECOND));
+            dataFim.set(Calendar.HOUR_OF_DAY, dataFim.getActualMaximum(Calendar.HOUR_OF_DAY));
+            dataFim.set(Calendar.MINUTE, dataFim.getActualMaximum(Calendar.MINUTE));
+            dataFim.set(Calendar.SECOND, dataFim.getActualMaximum(Calendar.SECOND));
+            dataFim.set(Calendar.MILLISECOND, dataFim.getActualMaximum(Calendar.MILLISECOND));
 
-            criteria.add(Restrictions.between("dataHoraLeitura", dataIn, dataFim));
+            criteria.add(Restrictions.between("dataHoraLeitura", dataIn.getTime(), dataFim.getTime()));
         }else if (dataInicial != null) {
-            criteria.add(Restrictions.ge("dataHoraLeitura", dataInicial));
+            Calendar dataIn = Calendar.getInstance();
+
+            dataIn.setTime(dataInicial);
+            dataIn.set(Calendar.HOUR_OF_DAY, dataIn.getActualMinimum(Calendar.HOUR_OF_DAY));
+            dataIn.set(Calendar.MINUTE, dataIn.getActualMinimum(Calendar.MINUTE));
+            dataIn.set(Calendar.SECOND, dataIn.getActualMinimum(Calendar.SECOND));
+            dataIn.set(Calendar.MILLISECOND, dataIn.getActualMinimum(Calendar.MILLISECOND));
+
+            criteria.add(Restrictions.ge("dataHoraLeitura", dataIn.getTime()));
 
         } else if (dataFinal != null) {
-            criteria.add(Restrictions.le("dataHoraLeitura", dataFinal));
+            Calendar dataFim = Calendar.getInstance();
+
+            dataFim.setTime(dataFinal);
+            dataFim.set(Calendar.HOUR_OF_DAY, dataFim.getActualMaximum(Calendar.HOUR_OF_DAY));
+            dataFim.set(Calendar.MINUTE, dataFim.getActualMaximum(Calendar.MINUTE));
+            dataFim.set(Calendar.SECOND, dataFim.getActualMaximum(Calendar.SECOND));
+            dataFim.set(Calendar.MILLISECOND, dataFim.getActualMaximum(Calendar.MILLISECOND));
+
+            criteria.add(Restrictions.le("dataHoraLeitura", dataFim.getTime()));
         }
         criteria.addOrder(Order.asc("dataHoraLeitura"));
         return criteria.list();

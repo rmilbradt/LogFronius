@@ -18,6 +18,7 @@
           <element id="library" level="project" name="org.glassfish:javax.json:1.0.4" />
           <element id="library" level="project" name="javax.json:javax.json-api:1.0" />
           <element id="library" level="project" name="javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="jcoord-1.0" />
         </element>
       </element>
     </root>
