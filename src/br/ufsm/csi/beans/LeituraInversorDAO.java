@@ -38,10 +38,26 @@ public class LeituraInversorDAO {
     @Transactional
     public List<LeituraInversor> findLeiturasByData(Date dataInicial, Date dataFinal) {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(LeituraInversor.class);
-        if (dataInicial != null && dataFinal != null) {
+        if (dataInicial!= null && dataFinal != null){
+            Calendar dataFim = Calendar.getInstance();
+            Calendar dataIn = Calendar.getInstance();
+
+            dataIn.setTime(dataInicial);
+            dataInicial.setTime(dataIn.getActualMinimum(dataIn.HOUR_OF_DAY));
+            dataInicial.setTime(dataIn.getActualMinimum(dataIn.MINUTE));
+            dataInicial.setTime(dataIn.getActualMinimum(dataIn.SECOND));
+            dataInicial.setTime(dataIn.getActualMinimum(dataIn.MILLISECOND));
+
+            dataFim.setTime(dataFinal);
+            dataFinal.setTime(dataFim.getActualMaximum(dataFim.HOUR_OF_DAY));
+            dataFinal.setTime(dataFim.getActualMaximum(dataFim.MINUTE));
+            dataFinal.setTime(dataFim.getActualMaximum(dataFim.SECOND));
+            dataFinal.setTime(dataFim.getActualMaximum(dataFim.MILLISECOND));
+
             criteria.add(Restrictions.between("dataHoraLeitura", dataInicial, dataFinal));
-        } else if (dataInicial != null) {
+        }else if (dataInicial != null) {
             criteria.add(Restrictions.ge("dataHoraLeitura", dataInicial));
+
         } else if (dataFinal != null) {
             criteria.add(Restrictions.le("dataHoraLeitura", dataFinal));
         }

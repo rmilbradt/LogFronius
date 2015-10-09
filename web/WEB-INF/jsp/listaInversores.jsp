@@ -12,7 +12,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Relatório</title>
+  <title>Cadastro de Inversores</title>
 
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="all">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="all"/>
