@@ -19,8 +19,30 @@ public class Inversor {
 
     private String nome;
     private String localizacao;
+    private String lat;
+    private String lon;
     private String coordenadas;
     private String ip;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLon() {
+        return lon;
+    }
+
+    public void setLon(String lon) {
+        this.lon = lon;
+    }
 
     public String getNome() {
         return nome;

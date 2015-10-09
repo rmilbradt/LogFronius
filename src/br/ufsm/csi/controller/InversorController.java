@@ -33,4 +33,23 @@ public class InversorController {
         model.addAttribute("inversores", inversores);
         return "listaInversores";
     }
+
+    @RequestMapping("cadastracoordenadas.html")
+    public String cadastrarCoordenadas(String nome1, String localizacao1, String ip1, String map1, Model model){
+
+        Inversor inversor = new Inversor();
+        inversor.setNome(nome1);
+        inversor.setLocalizacao(localizacao1);
+        inversor.setIp(ip1);
+        inversor.setCoordenadas(map1);
+
+        try {
+            dao.gravaInversor(inversor);
+            model.addAttribute("msg", "Inversor cadastrado com sucesso");
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("msg", "Erro no cadastro");
+        }
+        return "cadastraInversor";
+    }
 }
